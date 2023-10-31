@@ -1,0 +1,317 @@
+import openpyxl
+from nltk.metrics import jaccard_distance
+
+# Load the Excel workbook
+workbook = openpyxl.load_workbook('example.xlsx')
+
+# Select the worksheet
+worksheet = workbook['BR']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_BR = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_BR.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_BR):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_BR: {dissimilar_kw_BR}")
+
+worksheet = workbook['UK']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_UK = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_UK.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_UK):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_UK: {dissimilar_kw_UK}")
+
+worksheet = workbook['PE']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_PE = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_PE.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_PE):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_PE: {dissimilar_kw_PE}")
+
+worksheet = workbook['DK']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_DK = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_DK.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_DK):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_DK: {dissimilar_kw_DK}")
+
+worksheet = workbook['US']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_US = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_US.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_US):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_US: {dissimilar_kw_US}")
+
+worksheet = workbook['PT']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_PT = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_PT.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_PT):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_PT: {dissimilar_kw_PT}")
+
+worksheet = workbook['CO']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_CO = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_CO.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_CO):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_CO: {dissimilar_kw_CO}")
+
+worksheet = workbook['NZ']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_NZ = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_NZ.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_NZ):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_NZ: {dissimilar_kw_NZ}")
+
+
+worksheet = workbook['IE']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.99
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_IE = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_IE.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_IE):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_IE: {dissimilar_kw_IE}")
+
+worksheet = workbook['test']
+
+# Define the columns to compare
+colA = worksheet['A']
+colB = worksheet['B']
+colC = worksheet['C']
+# Define a similarity threshold
+threshold = 0.50
+
+# Define an empty list to hold the dissimilar keywords
+dissimilar_kw_test = []
+
+# Compare each keyword in colA with each keyword in colB
+for kw1 in colA:
+    if kw1.value is None:
+        continue
+    is_similar = any(1 - jaccard_distance(set(kw1.value), set(b_cell.value)) > threshold for b_cell in colB if b_cell.value is not None)
+    if not is_similar:
+        dissimilar_kw_test.append(kw1.value)
+
+# Write dissimilar keywords to column C
+for i, keyword in enumerate(dissimilar_kw_test):
+    colC[i+1].value = keyword
+
+# Save the workbook
+workbook.save('example.xlsx')
+
+
+# Print the dissimilar keywords
+print(f"dissimilar_kw_test: {dissimilar_kw_test}")
